@@ -40,10 +40,12 @@
 
         <Button
             android:id="@+id/send"
-            android:layout_width="0dp"
+            android:layout_width="1dp"
             android:layout_height="wrap_content"
-            android:text="Send"
-            android:layout_weight="0.2"/>
+            android:layout_weight="0.13"
+            android:background="@drawable/ic_send"
+            android:drawablePadding="4dp"
+            android:padding="4dp" />
     </LinearLayout>
 
 </RelativeLayout>

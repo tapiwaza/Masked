@@ -59,7 +59,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         userId = mAuth.getCurrentUser().getUid();
-        //this has to be wrong but ok lets see
+        //this has to be wrong but ok lets see - fixed it
         mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(userId);
 
         getUserInfo();
@@ -189,6 +189,7 @@ public class SettingsActivity extends AppCompatActivity {
             final  Uri imageUri = data.getData();
             resultUri = imageUri;
             mProfileImage.setImageURI(resultUri);
+            //sets profile image to uploaded image
         }
     }
 }

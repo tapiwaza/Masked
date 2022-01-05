@@ -208,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
     public void logoutUser(View view) {
         ///for logging the user out
         mAuth.signOut();
-        Intent intent = new Intent(MainActivity.this, ChooseLoginRegistrationActivity.class);
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
         finish(); //closes current activity
         return;

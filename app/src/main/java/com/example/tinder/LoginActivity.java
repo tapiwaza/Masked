@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button mLogin;
+    private Button mLogin, mRegister;
     private EditText mEmail, mPassword;
 
     private FirebaseAuth mAuth;
@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         };
 
         mLogin = (Button) findViewById(R.id.login);
+        mRegister = (Button) findViewById(R.id.register);
         mEmail = (EditText) findViewById(R.id.email);
         mPassword = (EditText) findViewById(R.id.password);
 
@@ -55,12 +56,23 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(!task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this, "Sign up error", Toast.LENGTH_SHORT);
+                            Toast.makeText(LoginActivity.this, "Sign in error", Toast.LENGTH_SHORT);
                         }
                     }
                 });
             }
         });
+
+        mRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(intent);
+                finish();
+                return;
+            }
+        });
+
     }
 
     @Override
